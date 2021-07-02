@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class RegisterScreen extends StatelessWidget {
-  const RegisterScreen({ Key? key }) : super(key: key);
+  const RegisterScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,12 +13,10 @@ class RegisterScreen extends StatelessWidget {
 }
 
 class RegisterScreenBody extends StatelessWidget {
-  const RegisterScreenBody({ Key? key }) : super(key: key);
+  const RegisterScreenBody({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      
-    );
+    return Container();
   }
 }
