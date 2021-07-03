@@ -16,12 +16,13 @@ class _MainScreenState extends State<MainScreen> {
     final gray = Color(0xFFBEC2C2);
 
 		int _selectedIndex = 0;
+		
 		List<Widget> _widgetOptions = <Widget>[
 			MainScreenBody(),
 			PlaylistScreenBody(),
 			ProfileScreenBody()
-
 		];
+
 		void _onItemTap(int index) {
 			setState(() {
 			  _selectedIndex = index;
@@ -35,13 +36,14 @@ class _MainScreenState extends State<MainScreen> {
 				showSelectedLabels: false,
 				showUnselectedLabels: false,
 				backgroundColor: Theme.of(context).accentColor,
-				items: [
-					BottomNavigationBarItem(icon: Image.asset("assets/bottom/home.png"), label: " ", activeIcon: Image.asset("assets/faviconNoGlow.png", width: 30,)),
-					BottomNavigationBarItem(icon: Image.asset("assets/bottom/sounds.png"), label: " "),
-					BottomNavigationBarItem(icon: Icon(Icons.perm_identity_rounded, color: gray), label: " ", activeIcon: Icon(Icons.perm_identity_rounded, color: Colors.white,))
-				],
 				currentIndex: _selectedIndex,
 				onTap: _onItemTap,
+				items: [
+					BottomNavigationBarItem(icon: Image.asset("assets/bottom/home.png"), label: " ", activeIcon: Image.asset("assets/faviconNoGlow.png", width: 30,)),
+					BottomNavigationBarItem(icon: Image.asset("assets/bottom/sounds.png"), label: " ", activeIcon: Image.asset("assets/bottom/soundsSelect.png")),
+					BottomNavigationBarItem(icon: Icon(Icons.perm_identity_rounded, color: gray), label: " ", activeIcon: Icon(Icons.perm_identity_rounded, color: Colors.white,))
+				],
+				
 			),
     );
   }
@@ -225,41 +227,4 @@ class MainScreenBody extends StatelessWidget {
       )
     );
   }
-}
-
-class MainScreenBottomBar extends StatefulWidget {
-	const MainScreenBottomBar({ Key? key }) : super(key: key);
-
-  @override
-  _MainScreenBottomBarState createState() => _MainScreenBottomBarState();
-}
-
-class _MainScreenBottomBarState extends State<MainScreenBottomBar> {
-	@override
-	Widget build(BuildContext context) {
-		final gray = Color(0xFFBEC2C2);
-
-		int _selectedIndex = 0;
-		List<Widget> _widgetOptions = <Widget>[
-
-		];
-		void _onItemTap(int index) {
-			setState(() {
-			  _selectedIndex = index;
-			});
-		}
-
-		return BottomNavigationBar(
-			showSelectedLabels: false,
-			showUnselectedLabels: false,
-			backgroundColor: Theme.of(context).accentColor,
-			items: [
-				BottomNavigationBarItem(icon: Image.asset("assets/faviconNoGlow.png", width: 30,), label: " "),
-				BottomNavigationBarItem(icon: Image.asset("assets/bottom/sounds.png"), label: " "),
-				BottomNavigationBarItem(icon: Icon(Icons.perm_identity_rounded, color: gray), label: " ")
-			],
-			currentIndex: _selectedIndex,
-			onTap: _onItemTap,
-		);
-	}
 }
