@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MainScreen extends StatelessWidget {
@@ -9,6 +10,7 @@ class MainScreen extends StatelessWidget {
     return Scaffold(
       appBar: null,
       body: MainScreenBody(),
+			bottomNavigationBar: MainScreenBottomBar(),
     );
   }
 }
@@ -18,12 +20,14 @@ class MainScreenBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     final maxWidth = MediaQuery.of(context).size.width;
     final gray = Color(0xFFBEC2C2);
 		final cream = Color(0xFFF7F3F0);
 
     return Container(
       width: maxWidth,
+			height: MediaQuery.of(context).size.height,
       decoration: BoxDecoration(color: Theme.of(context).accentColor),
       child: Padding(
         padding: EdgeInsets.all(30.0),
@@ -106,16 +110,105 @@ class MainScreenBody extends StatelessWidget {
 							],
 						),
 						Container(
-							child: Row(
-								children: [
-									Column(),
-									Image.asset("assets/meditationIllu.png")
-								],
+							margin: EdgeInsets.only(top: 30),
+							alignment: Alignment.centerLeft,
+							height: 140,
+							decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(15)), color: Colors.white),
+							child: Padding(
+							  padding: const EdgeInsets.all(12.0),
+							  child: Row(
+							  	mainAxisAlignment: MainAxisAlignment.spaceBetween,
+							  	children: [
+							  		Column(
+							  			crossAxisAlignment: CrossAxisAlignment.start,
+							  			children: [
+							  				Text("Meditation 101", style: GoogleFonts.alegreya(fontWeight: FontWeight.w600, color: Theme.of(context).accentColor, fontSize: 18)),
+							  				Text("Techniques, Benefits,\nand a Beginner’s How-To"),
+							  				Container(
+													margin: EdgeInsets.only(top: 5),
+							  				  child: ElevatedButton(onPressed: () {},
+							  				  	style: ButtonStyle(
+							  				  		minimumSize: MaterialStateProperty.all(Size(140, 40)), 
+							  				  		backgroundColor: MaterialStateProperty.all(Theme.of(context).accentColor), 
+							  				  		shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10))))
+							  				  	),
+							  				  	child: Row(
+							  				  		mainAxisAlignment: MainAxisAlignment.spaceBetween,
+							  				  		children: [
+							  				  			Icon(Icons.play_circle),
+							  				  			Text("Watch Now")
+							  				  		],
+							  				  	),
+							  				  ),
+							  				)
+							  			],
+							  		),
+							  		Image.asset("assets/meditationIllu.png", scale: 1.2,)
+							  	],
+							  ),
 							)
-						)
+						),
+						Container(
+							margin: EdgeInsets.only(top: 30),
+							height: 140,
+							alignment: Alignment.centerLeft,
+							decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(15)), color: Colors.white),
+							child: Padding(
+							  padding: const EdgeInsets.all(12.0),
+							  child: Row(
+							  	mainAxisAlignment: MainAxisAlignment.spaceBetween,
+							  	children: [
+							  		Column(
+							  			crossAxisAlignment: CrossAxisAlignment.start,
+							  			children: [
+							  				Text("Cardio Meditation", style: GoogleFonts.alegreya(fontWeight: FontWeight.w600, color: Theme.of(context).accentColor, fontSize: 18)),
+							  				Text("Basics of Yoga for Beginners\nor Experienced Professionals"),
+							  				Container(
+													margin: EdgeInsets.only(top: 5),
+							  				  child: ElevatedButton(onPressed: () {},
+							  				  	style: ButtonStyle(
+							  				  		minimumSize: MaterialStateProperty.all(Size(140, 40)), 
+							  				  		backgroundColor: MaterialStateProperty.all(Theme.of(context).accentColor), 
+							  				  		shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10))))
+							  				  	),
+							  				  	child: Row(
+							  				  		mainAxisAlignment: MainAxisAlignment.spaceBetween,
+							  				  		children: [
+							  				  			Icon(Icons.play_circle),
+							  				  			Text("Watch Now")
+							  				  		],
+							  				  	),
+							  				  	
+							  				  ),
+							  				)
+							  			],
+							  		),
+							  		Image.asset("assets/cardioMeditation.png",)
+							  	],
+							  ),
+							)
+						),
           ],
         ),
       )
     );
   }
+}
+
+class MainScreenBottomBar extends StatelessWidget {
+	const MainScreenBottomBar({ Key? key }) : super(key: key);
+
+	@override
+	Widget build(BuildContext context) {
+		return BottomNavigationBar(
+			showSelectedLabels: false,
+			showUnselectedLabels: false,
+			backgroundColor: Theme.of(context).accentColor,
+			items: [
+				BottomNavigationBarItem(icon: Image.asset("assets/faviconNoGlow.png", width: 30,), label: " "),
+				BottomNavigationBarItem(icon: Icon(Icons.queue_music_rounded, color: Colors.white,), label: " "),
+				BottomNavigationBarItem(icon: Icon(Icons.perm_identity_rounded, color: Colors.white), label: " ")
+			],
+		);
+	}
 }
