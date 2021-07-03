@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 
 class MainScreen extends StatelessWidget {
@@ -24,6 +22,7 @@ class MainScreenBody extends StatelessWidget {
 
     return Container(
       width: maxWidth,
+      decoration: BoxDecoration(color: Theme.of(context).accentColor),
       child: Padding(
         padding: EdgeInsets.all(30.0),
         child: Column(
@@ -35,8 +34,16 @@ class MainScreenBody extends StatelessWidget {
               children: [
                 IconButton(
                   onPressed: () {}, 
-                  icon: Image.asset("assets/LogofaviconLittle.png")
+                  icon: Image.asset("assets/burger.png")
                 ),
+                IconButton(
+                  onPressed: () {}, 
+                  icon: Image.asset("assets/faviconNoGlow.png")
+                ),
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(Icons.perm_identity)
+                )
               ],
             )
           ],

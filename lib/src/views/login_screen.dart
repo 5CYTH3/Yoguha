@@ -106,26 +106,27 @@ class LoginScreenBody extends StatelessWidget {
                 ),
                 Container(
                   alignment: Alignment.center,
-                  child: RichText(
-                      text: TextSpan(
-                        style: TextStyle(color: Colors.white, fontSize: 16),
-                        children: <TextSpan>[
-                          TextSpan(text: "Don’t have an account? "),
-                          TextSpan(
-                            text: "Sign Up",
-                            style: TextStyle(fontWeight: FontWeight.bold)
-                          )
-                        ],
-                        recognizer: TapGestureRecognizer()..onTap = () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => RegisterScreen()
-                            )
-                          );
-                        }
+                  child: TextButton(onPressed: () {
+                    print("It does work.");
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => RegisterScreen()
                       )
-                    ),
+                    );
+                  }, 
+                  child: RichText(
+                    text: TextSpan(
+                      style: TextStyle(color: Colors.white, fontSize: 16),
+                      children: <TextSpan>[
+                        TextSpan(text: "Don’t have an account? "),
+                        TextSpan(
+                          text: "Sign Up",
+                          style: TextStyle(fontWeight: FontWeight.bold)
+                        )
+                      ],
+                    )
+                  ),),
                 )
               ],
             ),

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'login_screen.dart';
+import 'main_screen.dart';
 
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({Key? key}) : super(key: key);
@@ -50,9 +51,22 @@ class RegisterScreenBody extends StatelessWidget {
                 Text("Sign up now for free and start meditating, and explore Medic.", style: GoogleFonts.alegreyaSans(fontSize: 22, color: gray, fontWeight: FontWeight.w400)),
                 SizedBox(height: 60),
                 TextField(
+                  decoration: InputDecoration(
+                    icon: Icon(Icons.account_circle, color: gray,),
+                    labelText: "Username",
+                    labelStyle: GoogleFonts.alegreyaSans(color: gray),
+                    enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: gray)
+                    ),
+                    focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.white)),
+                    focusColor: Colors.white
+                  ),
+                  
+                ),
+                TextField(
                   style: TextStyle(color: Colors.white),
                   scrollPhysics: BouncingScrollPhysics(),
-                  controller: emailController, 
+                  controller: emailController,
                   decoration: InputDecoration(
                     icon: Icon(Icons.mail, color: gray),
                     labelStyle: GoogleFonts.alegreyaSans(color: gray),
@@ -88,8 +102,13 @@ class RegisterScreenBody extends StatelessWidget {
                   child: ElevatedButton(
                     onPressed: () {
                       //Signup Method
+                      Navigator.push(
+                        context, MaterialPageRoute(
+                          builder: (context) => MainScreen()
+                        )
+                      );
                     }, 
-                    child: Text("LOGIN", style: GoogleFonts.alegreyaSans(color: Colors.white),),
+                    child: Text("SIGNUP", style: GoogleFonts.alegreyaSans(color: Colors.white),),
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(Theme.of(context).primaryColor),
                       textStyle: MaterialStateProperty.all(GoogleFonts.alegreyaSans(color: Colors.white, fontSize: 25, fontWeight: FontWeight.w500)),
@@ -101,7 +120,17 @@ class RegisterScreenBody extends StatelessWidget {
                 ),
                 Container(
                   alignment: Alignment.center,
-                  child: RichText(
+                  child: TextButton(
+                    onPressed: () {
+                      print("It does work.");
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => LoginScreen()
+                        )
+                      );
+                    },
+                    child: RichText(
                       text: TextSpan(
                         style: TextStyle(color: Colors.white, fontSize: 16),
                         children: <TextSpan>[
@@ -110,17 +139,10 @@ class RegisterScreenBody extends StatelessWidget {
                             text: "Sign In",
                             style: TextStyle(fontWeight: FontWeight.bold)
                           )
-                        ],
-                        recognizer: TapGestureRecognizer()..onTap = () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => LoginScreen()
-                            )
-                          );
-                        }
+                        ]
                       )
                     ),
+                  ),
                 )
               ],
             ),
