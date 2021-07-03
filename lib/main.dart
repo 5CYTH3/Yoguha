@@ -1,5 +1,6 @@
 import 'package:dribbly/src/auth_service.dart';
 import 'package:dribbly/src/views/main_screen.dart';
+import 'package:dribbly/src/views/register_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         Provider<AuthService>(create: (_) => AuthService(FirebaseAuth.instance)),
-        StreamProvider(create: (_) => (context).read()<AuthService>().authStateChanges, initialData: null,)
+        StreamProvider(create: (context) => context.read()<AuthService>().authStateChanges, initialData: null,)
       ],
         child: MaterialApp(
         title: 'Yoguha',
@@ -41,10 +42,9 @@ class AuthWrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final firebaseUser = context.watch()<User>();
-
     if (firebaseUser != null) {
       return MainScreen();
     }
-    return AlertDialog(content: Text("The user does not exist."),);
+    return RegisterScreen();
   }
 }
