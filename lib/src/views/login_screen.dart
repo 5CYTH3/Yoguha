@@ -19,6 +19,7 @@ class LoginScreenBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final maxWidth = MediaQuery.of(context).size.width;
+    final gray = Color(0xFFBEC2C2);
 
     return Container(
       width: maxWidth,
@@ -42,8 +43,8 @@ class LoginScreenBody extends StatelessWidget {
                 ),
                 Text("Sign in now to acces your excercises and saved music.", style: GoogleFonts.alegreyaSans(fontSize: 22, color: Color.fromRGBO(255, 255, 255, 70), fontWeight: FontWeight.w400)),
                 SizedBox(height: 30),
-                TextField(style: TextStyle(color: Colors.white),)
-
+                TextField(style: TextStyle(color: Colors.white), decoration: InputDecoration(icon: Icon(Icons.mail), hoverColor: gray, fillColor: gray)),
+                TextField(decoration: InputDecoration(icon: Icon(Icons.lock)),),
               ],
             ),
           ],

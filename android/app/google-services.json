@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "53003073521",
+    "project_id": "yoguha-5f1c7",
+    "storage_bucket": "yoguha-5f1c7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:53003073521:android:6498c7f84cda4fb96ef650",
+        "android_client_info": {
+          "package_name": "com.example.dribbly"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "53003073521-vp115glaomsupsvprnbcv85ckm1j5oep.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiDisiqS4tN3Im52A0xIJipKvjSgreEVE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "53003073521-vp115glaomsupsvprnbcv85ckm1j5oep.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
