@@ -104,6 +104,14 @@ class MainScreenBody extends StatelessWidget {
 									],
 								),
 							],
+						),
+						Container(
+							child: Row(
+								children: [
+									Column(),
+									Image.asset("assets/meditationIllu.png")
+								],
+							)
 						)
           ],
         ),
