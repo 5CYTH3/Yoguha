@@ -43,7 +43,7 @@ class _MainScreenState extends State<MainScreen> {
 					BottomNavigationBarItem(icon: Image.asset("assets/bottom/sounds.png"), label: " ", activeIcon: Image.asset("assets/bottom/soundsSelect.png")),
 					BottomNavigationBarItem(icon: Icon(Icons.perm_identity_rounded, color: gray), label: " ", activeIcon: Icon(Icons.perm_identity_rounded, color: Colors.white,))
 				],
-				
+
 			),
     );
   }
