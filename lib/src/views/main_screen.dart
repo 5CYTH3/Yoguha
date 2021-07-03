@@ -1,16 +1,48 @@
+import 'package:dribbly/src/views/playlist_screen.dart';
+import 'package:dribbly/src/views/profile_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class MainScreen extends StatelessWidget {
+class MainScreen extends StatefulWidget {
   const MainScreen({ Key? key }) : super(key: key);
 
   @override
+  _MainScreenState createState() => _MainScreenState();
+}
+
+class _MainScreenState extends State<MainScreen> {
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    final gray = Color(0xFFBEC2C2);
+
+		int _selectedIndex = 0;
+		List<Widget> _widgetOptions = <Widget>[
+			MainScreenBody(),
+			PlaylistScreenBody(),
+			ProfileScreenBody()
+
+		];
+		void _onItemTap(int index) {
+			setState(() {
+			  _selectedIndex = index;
+			});
+		}
+
+		return Scaffold(
       appBar: null,
-      body: MainScreenBody(),
-			bottomNavigationBar: MainScreenBottomBar(),
+      body: _widgetOptions.elementAt(_selectedIndex),
+			bottomNavigationBar: BottomNavigationBar(
+				showSelectedLabels: false,
+				showUnselectedLabels: false,
+				backgroundColor: Theme.of(context).accentColor,
+				items: [
+					BottomNavigationBarItem(icon: Image.asset("assets/bottom/home.png"), label: " ", activeIcon: Image.asset("assets/faviconNoGlow.png", width: 30,)),
+					BottomNavigationBarItem(icon: Image.asset("assets/bottom/sounds.png"), label: " "),
+					BottomNavigationBarItem(icon: Icon(Icons.perm_identity_rounded, color: gray), label: " ", activeIcon: Icon(Icons.perm_identity_rounded, color: Colors.white,))
+				],
+				currentIndex: _selectedIndex,
+				onTap: _onItemTap,
+			),
     );
   }
 }
@@ -113,7 +145,7 @@ class MainScreenBody extends StatelessWidget {
 							margin: EdgeInsets.only(top: 30),
 							alignment: Alignment.centerLeft,
 							height: 140,
-							decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(15)), color: Colors.white),
+							decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(15)), color: cream),
 							child: Padding(
 							  padding: const EdgeInsets.all(12.0),
 							  child: Row(
@@ -152,7 +184,7 @@ class MainScreenBody extends StatelessWidget {
 							margin: EdgeInsets.only(top: 30),
 							height: 140,
 							alignment: Alignment.centerLeft,
-							decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(15)), color: Colors.white),
+							decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(15)), color: cream),
 							child: Padding(
 							  padding: const EdgeInsets.all(12.0),
 							  child: Row(
@@ -195,20 +227,39 @@ class MainScreenBody extends StatelessWidget {
   }
 }
 
-class MainScreenBottomBar extends StatelessWidget {
+class MainScreenBottomBar extends StatefulWidget {
 	const MainScreenBottomBar({ Key? key }) : super(key: key);
 
+  @override
+  _MainScreenBottomBarState createState() => _MainScreenBottomBarState();
+}
+
+class _MainScreenBottomBarState extends State<MainScreenBottomBar> {
 	@override
 	Widget build(BuildContext context) {
+		final gray = Color(0xFFBEC2C2);
+
+		int _selectedIndex = 0;
+		List<Widget> _widgetOptions = <Widget>[
+
+		];
+		void _onItemTap(int index) {
+			setState(() {
+			  _selectedIndex = index;
+			});
+		}
+
 		return BottomNavigationBar(
 			showSelectedLabels: false,
 			showUnselectedLabels: false,
 			backgroundColor: Theme.of(context).accentColor,
 			items: [
 				BottomNavigationBarItem(icon: Image.asset("assets/faviconNoGlow.png", width: 30,), label: " "),
-				BottomNavigationBarItem(icon: Icon(Icons.queue_music_rounded, color: Colors.white,), label: " "),
-				BottomNavigationBarItem(icon: Icon(Icons.perm_identity_rounded, color: Colors.white), label: " ")
+				BottomNavigationBarItem(icon: Image.asset("assets/bottom/sounds.png"), label: " "),
+				BottomNavigationBarItem(icon: Icon(Icons.perm_identity_rounded, color: gray), label: " ")
 			],
+			currentIndex: _selectedIndex,
+			onTap: _onItemTap,
 		);
 	}
 }
