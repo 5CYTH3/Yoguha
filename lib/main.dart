@@ -38,6 +38,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
+// Set this as home: and patch error of "object instead of dynamic".
 class AuthWrapper extends StatelessWidget {
   const AuthWrapper({ Key? key }) : super(key: key);
 
@@ -48,6 +49,6 @@ class AuthWrapper extends StatelessWidget {
     if (firebaseUser != null) {
       return MainScreen();
     }
-    return RegisterScreen();
+    return HomeScreen();
   }
 }

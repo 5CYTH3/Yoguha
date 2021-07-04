@@ -3,6 +3,13 @@ import 'package:dribbly/src/views/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+
+// TODO  :
+// Make a timer
+// Implement audio support
+// Implement registration
+// Make the bottom bar functional
+
 class MainScreen extends StatefulWidget {
   const MainScreen({ Key? key }) : super(key: key);
 

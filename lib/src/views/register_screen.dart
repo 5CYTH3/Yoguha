@@ -101,7 +101,13 @@ class RegisterScreenBody extends StatelessWidget {
                   margin: EdgeInsets.only(bottom: 30.0),
                   child: ElevatedButton(
                     onPressed: () {
-                      //Signup Method
+
+
+
+                      // Put the signup method and return the login page when signed up
+                      
+
+
                       Navigator.push(
                         context, MaterialPageRoute(
                           builder: (context) => MainScreen()
