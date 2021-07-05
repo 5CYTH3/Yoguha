@@ -1,3 +1,4 @@
+import 'package:dribbly/src/components/OwnAppBar.dart';
 import 'package:dribbly/src/views/playlist_screen.dart';
 import 'package:dribbly/src/views/profile_screen.dart';
 import 'package:flutter/material.dart';
@@ -8,7 +9,7 @@ import 'package:google_fonts/google_fonts.dart';
 // Make a timer
 // Implement audio support
 // Implement registration
-// Make the bottom bar functional
+// Implement a real AppBar (With a better height)
 
 class MainScreen extends StatefulWidget {
   const MainScreen({ Key? key }) : super(key: key);
@@ -46,9 +47,10 @@ class _MainScreenState extends State<MainScreen> {
 				backgroundColor: Theme.of(context).accentColor,
 				currentIndex: _selectedIndex,
 				onTap: _onItemTap,
+        elevation: 0,
 				items: [
-					BottomNavigationBarItem(icon: Image.asset("assets/bottom/home.png"), label: " ", activeIcon: Image.asset("assets/faviconNoGlow.png", width: 30,)),
-					BottomNavigationBarItem(icon: Image.asset("assets/bottom/sounds.png"), label: " ", activeIcon: Image.asset("assets/bottom/soundsSelect.png")),
+					BottomNavigationBarItem(icon: Image.asset("assets/bottom/home.png"), label: " ", activeIcon: Image.asset("assets/faviconNoGlow.png", width: 22,)),
+					BottomNavigationBarItem(icon: Image.asset("assets/bottom/sounds.png"), label: " ", activeIcon: Image.asset("assets/bottom/soundsSelected.png")),
 					BottomNavigationBarItem(icon: Icon(Icons.perm_identity_rounded, color: gray), label: " ", activeIcon: Icon(Icons.perm_identity_rounded, color: Colors.white,))
 				],
 
