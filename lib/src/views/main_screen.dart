@@ -18,9 +18,6 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  @override
-  Widget build(BuildContext context) {
-    final gray = Color(0xFFBEC2C2);
 
 		int _selectedIndex = 0;
 		
@@ -35,6 +32,10 @@ class _MainScreenState extends State<MainScreen> {
 			  _selectedIndex = index;
 			});
 		}
+
+  @override
+  Widget build(BuildContext context) {
+    final gray = Color(0xFFBEC2C2);
 
 		return Scaffold(
       appBar: null,
@@ -219,7 +220,6 @@ class MainScreenBody extends StatelessWidget {
 							  				  			Text("Watch Now")
 							  				  		],
 							  				  	),
-							  				  	
 							  				  ),
 							  				)
 							  			],

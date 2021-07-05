@@ -1,6 +1,5 @@
 import 'package:dribbly/src/auth_service.dart';
 import 'package:dribbly/src/views/main_screen.dart';
-import 'package:dribbly/src/views/register_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -41,7 +40,6 @@ class MyApp extends StatelessWidget {
 // Set this as home: and patch error of "object instead of dynamic".
 class AuthWrapper extends StatelessWidget {
   const AuthWrapper({ Key? key }) : super(key: key);
-
 
   @override
   Widget build(BuildContext context) {
