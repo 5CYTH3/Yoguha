@@ -35,16 +35,22 @@ class PlaylistScreenBody extends StatelessWidget {
                     Container(
                       width: 138,
                       child: ElevatedButton(
-                        style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.white)),
+                        style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.all(Colors.white),
+                          shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)))
+                        ),
                         onPressed: () {}, 
                         child: Row(
                           children: [
-                            Text("play now", style: GoogleFonts.alegreyaSans(),),
-                            Icon(Icons.play_circle)
+                            Container(
+                              margin: EdgeInsets.only(right: 2),
+                              child: Text("play now", style: GoogleFonts.alegreyaSans(color: Colors.black))
+                            ),
+                            Icon(Icons.play_circle, color: Colors.black,)
                           ],
                         ),
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),
