@@ -39,7 +39,7 @@ class _MainScreenState extends State<MainScreen> {
     final gray = Color(0xFFBEC2C2);
 
 		return Scaffold(
-      appBar: null,
+      appBar: OwnAppBar(),
       body: _widgetOptions.elementAt(_selectedIndex),
 			bottomNavigationBar: BottomNavigationBar(
 				showSelectedLabels: false,
@@ -79,27 +79,7 @@ class MainScreenBody extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                IconButton(
-                  onPressed: () {}, 
-                  icon: Image.asset("assets/burger.png"),
-									iconSize: 30,
-                ),   
-                IconButton(
-                  onPressed: () {}, 
-                  icon: Image.asset("assets/faviconNoGlow.png"),
-									iconSize: 50,
-                ),
-                IconButton(
-                  onPressed: () {},
-                  icon: Icon(Icons.perm_identity, color: Colors.white, size: 30,)
-                )
-              ],
-            ),
 						Container(
-							margin: EdgeInsets.only(top: 20),
 						  child: Column(
 						  	crossAxisAlignment: CrossAxisAlignment.start,
 						  	children: [
