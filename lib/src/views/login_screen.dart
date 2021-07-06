@@ -87,8 +87,8 @@ class LoginScreenBody extends StatelessWidget {
                   width: maxWidth,
                   margin: EdgeInsets.only(bottom: 30.0),
                   child: ElevatedButton(
-                    onPressed: () {
-                      context.read<AuthService>().signIn(
+                    onPressed: () async {
+                      await context.read<AuthService>().signIn(
                         email: emailController.text.trim(),
                         password: passwordController.text.trim()
                       );
