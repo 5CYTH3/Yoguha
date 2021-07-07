@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class OwnAppBar extends StatefulWidget implements PreferredSizeWidget {
+  
   OwnAppBar({ Key? key }) : preferredSize = Size.fromHeight(100), super(key: key);
 
   @override
@@ -11,12 +12,16 @@ class OwnAppBar extends StatefulWidget implements PreferredSizeWidget {
 }
 
 class _OwnAppBarState extends State<OwnAppBar> {
+
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      
       actions: [
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+
+          },
           icon: Icon(Icons.perm_identity, color: Colors.white, size: 30,)
         )
       ],

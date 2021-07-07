@@ -1,4 +1,4 @@
-import 'package:dribbly/src/components/widgets.dart';
+import 'package:dribbly/src/models/widgets.dart';
 import 'package:dribbly/src/views/login_screen.dart';
 import 'package:dribbly/src/views/register_screen.dart';
 import 'package:flutter/material.dart';

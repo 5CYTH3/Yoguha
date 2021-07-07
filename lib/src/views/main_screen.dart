@@ -1,3 +1,4 @@
+import 'package:dribbly/src/components/NavigationDrawerWidget.dart';
 import 'package:dribbly/src/components/OwnAppBar.dart';
 import 'package:dribbly/src/views/playlist_screen.dart';
 import 'package:dribbly/src/views/profile_screen.dart';
@@ -9,8 +10,8 @@ import 'package:google_fonts/google_fonts.dart';
 // Make a timer
 // Implement audio support
 // Implement registration
-// Implement a real AppBar (With a better height)
-
+// Change architecture to MVC
+// ListView.builder the playlists.
 class MainScreen extends StatefulWidget {
   const MainScreen({ Key? key }) : super(key: key);
 
@@ -34,12 +35,16 @@ class _MainScreenState extends State<MainScreen> {
 			});
 		}
 
+    GlobalKey<ScaffoldState> _mainKey = GlobalKey();
+
   @override
   Widget build(BuildContext context) {
     final gray = Color(0xFFBEC2C2);
 
 		return Scaffold(
       appBar: OwnAppBar(),
+      key: _mainKey,
+      drawer: NavigationDrawerWidget(),
       body: _widgetOptions.elementAt(_selectedIndex),
 			bottomNavigationBar: BottomNavigationBar(
 				showSelectedLabels: false,

@@ -1,4 +1,4 @@
-import 'package:dribbly/src/auth_service.dart';
+import 'package:dribbly/src/controllers/auth_service.dart';
 import 'package:dribbly/src/views/main_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';

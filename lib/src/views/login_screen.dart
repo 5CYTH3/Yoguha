@@ -1,4 +1,4 @@
-import 'package:dribbly/src/auth_service.dart';
+import 'package:dribbly/src/controllers/auth_service.dart';
 import 'package:dribbly/src/views/register_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
