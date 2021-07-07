@@ -1,16 +1,21 @@
+import 'package:dribbly/src/models/PlaylistModel.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class PlaylistScreenBody extends StatelessWidget {
-  const PlaylistScreenBody({ Key? key }) : super(key: key);
+  PlaylistScreenBody({ Key? key }) : super(key: key);
+
+  List playList = [
+    PlaylistModel("Painting Forest", "by: Painting with Passion", "assets/illustrations/amazonia.png", "20m"),
+    PlaylistModel("Mountaineers", "by: Painting with Passion", "assets/illustrations/forest.png", "15m"),
+    PlaylistModel("Lovely Desert", "by: Painting with Passion", "assets/illustrations/arizona.png", "39m"),
+    PlaylistModel("The Hill Sides", "by: Painting with Passion", "assets/illustrations/desert.png", "50m")
+  ];
 
   @override
   Widget build(BuildContext context) {
     final maxWidth = MediaQuery.of(context).size.width;
     final gray = Color(0xFFBEC2C2);
-		final cream = Color(0xFFF7F3F0);
-
-    List<AssetImage> imageList = [AssetImage(""), ];
 
     return Container(
       width: maxWidth,
@@ -58,6 +63,47 @@ class PlaylistScreenBody extends StatelessWidget {
             Expanded(
               child: Container(
                 margin: EdgeInsets.only(top: 20),
+                child: ListView.builder(
+                  itemCount: playList.length,
+                  itemExtent: 90,
+                  physics: BouncingScrollPhysics(),
+                  itemBuilder: (context, index) {
+                    return ListTile(
+                      onTap: () {
+                        switch(playList[index]) {
+                          case 0:
+                            
+                            break;
+
+                        case 1:
+                          break;
+
+                        case 2:
+                          break;
+
+                        case 3:
+                          break;
+
+                        }
+                      },
+                      leading: Container(
+                        height: 60.0,
+                        width: 60.0,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage(playList[index].path),
+                            fit: BoxFit.cover
+                          ), 
+                          borderRadius: BorderRadius.all(Radius.circular(20.0))
+                        ),
+                      ),
+                      title: Text(playList[index].title, style: GoogleFonts.alegreyaSans(color: Colors.white)),
+                      subtitle: Text(playList[index].subTitle, style: GoogleFonts.alegreyaSans(color: gray)),
+                      trailing: Text(playList[index].duration, style: GoogleFonts.alegreyaSans(color: gray))
+                    );
+                  }
+                ),
+                /*
                 child: ListView(
                   itemExtent: 90,
                   physics: BouncingScrollPhysics(),
@@ -128,6 +174,7 @@ class PlaylistScreenBody extends StatelessWidget {
                     ),
                   ]
                 ),
+                */
               ),
             )
           ],
