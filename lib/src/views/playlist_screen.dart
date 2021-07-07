@@ -1,4 +1,5 @@
 import 'package:dribbly/src/models/PlaylistModel.dart';
+import 'package:dribbly/src/views/sound_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -6,10 +7,10 @@ class PlaylistScreenBody extends StatelessWidget {
   PlaylistScreenBody({ Key? key }) : super(key: key);
 
   List playList = [
-    PlaylistModel("Painting Forest", "by: Painting with Passion", "assets/illustrations/amazonia.png", "20m"),
-    PlaylistModel("Mountaineers", "by: Painting with Passion", "assets/illustrations/forest.png", "15m"),
-    PlaylistModel("Lovely Desert", "by: Painting with Passion", "assets/illustrations/arizona.png", "39m"),
-    PlaylistModel("The Hill Sides", "by: Painting with Passion", "assets/illustrations/desert.png", "50m")
+    PlaylistModel("Painting Forest", "by: Painting with Passion", "assets/illustrations/amazonia.png", "20m", ""),
+    PlaylistModel("Mountaineers", "by: Painting with Passion", "assets/illustrations/forest.png", "15m", ""),
+    PlaylistModel("Lovely Desert", "by: Painting with Passion", "assets/illustrations/arizona.png", "39m", ""),
+    PlaylistModel("The Hill Sides", "by: Painting with Passion", "assets/illustrations/desert.png", "50m", "")
   ];
 
   @override
@@ -70,21 +71,14 @@ class PlaylistScreenBody extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return ListTile(
                       onTap: () {
-                        switch(playList[index]) {
-                          case 0:
-                            
-                            break;
-
-                        case 1:
-                          break;
-
-                        case 2:
-                          break;
-
-                        case 3:
-                          break;
-
-                        }
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => PlayingSound(
+                            url: playList[index].url, 
+                            title: playList[index].title, 
+                            subTitle: playList[index].subTitle, 
+                            imagePath: playList[index].path
+                          )
+                        ));
                       },
                       leading: Container(
                         height: 60.0,
