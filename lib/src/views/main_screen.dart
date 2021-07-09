@@ -7,7 +7,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 
 // TODO  :
-// Make a timer
+// ADD A CANCEL BUTTON
 // Implement audio support
 // Implement registration
 class MainScreen extends StatefulWidget {
