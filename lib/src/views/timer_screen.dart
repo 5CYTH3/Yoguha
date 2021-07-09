@@ -33,21 +33,25 @@ class _TimerScreenBodyState extends State<TimerScreenBody> {
   void initState() {
     super.initState();
     
-    startTimer();
+    // startTimer();
     reset();
   }
 
   void reset() {
-    setState(() => _duration = _duration);
+    setState(() => _currentDuration = _duration);
   }
 
   void retrieveTime() {
     final retrieveSeconds = -1;
 
     setState(() {
-      final seconds = _duration.inSeconds + retrieveSeconds;
+    final seconds = _currentDuration.inSeconds + retrieveSeconds;
 
-      _duration = Duration(seconds: seconds);
+      if(seconds < 0) {
+        timer?.cancel();
+      } else {
+        _currentDuration = Duration(seconds: seconds);
+      }
 
     });
 
@@ -61,13 +65,16 @@ class _TimerScreenBodyState extends State<TimerScreenBody> {
     if(resets) {
       reset();
     }
+
+    setState(() => timer?.cancel());
+
   }
 
 
   Widget buildTimer() {
     String twoDigits(int n) => n.toString().padLeft(2, '0'); 
-    final minutes = twoDigits(_duration.inMinutes.remainder(60));
-    final seconds = twoDigits(_duration.inSeconds.remainder(60));
+    final minutes = twoDigits(_currentDuration.inMinutes.remainder(60));
+    final seconds = twoDigits(_currentDuration.inSeconds.remainder(60));
 
     return Text(
       '$minutes:$seconds',
@@ -79,19 +86,6 @@ class _TimerScreenBodyState extends State<TimerScreenBody> {
     final isRunning = timer == null ? false : timer!.isActive;
 
     return isRunning ? 
-      ElevatedButton(
-        onPressed: () {
-          startTimer();
-        }, 
-        child: Text("Start Now"),
-        style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all(Theme.of(context).primaryColor),
-          textStyle: MaterialStateProperty.all(GoogleFonts.alegreyaSans(color: Colors.white, fontSize: 25, fontWeight: FontWeight.w500)),
-          elevation: MaterialStateProperty.all(4),
-          fixedSize: MaterialStateProperty.all(Size(220, 60)),
-          shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10))))
-        ),
-      ) : 
       ElevatedButton(
         onPressed: () {
           if (isRunning) {
@@ -106,8 +100,21 @@ class _TimerScreenBodyState extends State<TimerScreenBody> {
           fixedSize: MaterialStateProperty.all(Size(220, 60)),
           shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10))))
         ),
-      );
-
+      ) :
+      ElevatedButton(
+        onPressed: () {
+          startTimer();
+        }, 
+        child: Text("Start Now"),
+        style: ButtonStyle(
+          backgroundColor: MaterialStateProperty.all(Theme.of(context).primaryColor),
+          textStyle: MaterialStateProperty.all(GoogleFonts.alegreyaSans(color: Colors.white, fontSize: 25, fontWeight: FontWeight.w500)),
+          elevation: MaterialStateProperty.all(4),
+          fixedSize: MaterialStateProperty.all(Size(220, 60)),
+          shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10))))
+        ),
+      ); 
+      
   }
 
   @override
@@ -138,19 +145,7 @@ class _TimerScreenBodyState extends State<TimerScreenBody> {
               padding: EdgeInsets.only(top: 45, bottom: 20),
               child: buildTimer()
             ),
-            ElevatedButton(
-              onPressed: () {
-                startTimer();
-              }, 
-              child: Text("Start Now"),
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(Theme.of(context).primaryColor),
-                textStyle: MaterialStateProperty.all(GoogleFonts.alegreyaSans(color: Colors.white, fontSize: 25, fontWeight: FontWeight.w500)),
-                elevation: MaterialStateProperty.all(4),
-                fixedSize: MaterialStateProperty.all(Size(220, 60)),
-                shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10))))
-              ),
-            )
+            buildControlButtons()
           ],
         ),
       )
