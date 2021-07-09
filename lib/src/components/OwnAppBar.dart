@@ -1,3 +1,4 @@
+import 'package:dribbly/src/views/main_screen.dart';
 import 'package:flutter/material.dart';
 
 class OwnAppBar extends StatefulWidget implements PreferredSizeWidget {
@@ -26,12 +27,17 @@ class _OwnAppBarState extends State<OwnAppBar> {
         )
       ],
       leading: IconButton(
-        onPressed: () {}, 
+        onPressed: () {
+            print("Téma l'bouzin sa marche");
+            Scaffold.of(context).openDrawer();
+        }, 
         icon: Image.asset("assets/burger.png"),
         iconSize: 30,
       ),
       title: IconButton(
-        onPressed: () {}, 
+        onPressed: () {
+          Navigator.of(context).push(MaterialPageRoute(builder: (context) => MainScreen()));
+        }, 
         icon: Image.asset("assets/faviconNoGlow.png"),
         iconSize: 50,
       ),

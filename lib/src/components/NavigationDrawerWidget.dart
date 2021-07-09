@@ -9,6 +9,7 @@ class NavigationDrawerWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: Container(
+        decoration: BoxDecoration(color: Theme.of(context).accentColor),
         child: ListView(
           children: <Widget>[
             const SizedBox(height: 48.0),
@@ -31,7 +32,7 @@ class NavigationDrawerWidget extends StatelessWidget {
     return ListTile(
       leading: Icon(icon, color: Colors.white),
       title: Text(text, style: GoogleFonts.alegreyaSans(color: Colors.white)),
-      onTap: () {},
+      onTap: onClicked
     );
   }
 
@@ -42,5 +43,4 @@ class NavigationDrawerWidget extends StatelessWidget {
         break;
     }
   }
-
 }

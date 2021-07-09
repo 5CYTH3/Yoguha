@@ -1,3 +1,4 @@
+import 'package:dribbly/src/components/NavigationDrawerWidget.dart';
 import 'package:dribbly/src/components/OwnAppBar.dart';
 import 'package:flutter/material.dart';
 class TimerScreen extends StatelessWidget {
@@ -8,6 +9,7 @@ class TimerScreen extends StatelessWidget {
     return Scaffold(
       appBar: OwnAppBar(),
       body: TimerScreenBody(),
+      drawer: NavigationDrawerWidget(),
     );
   }
 }

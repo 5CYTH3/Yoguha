@@ -10,8 +10,6 @@ import 'package:google_fonts/google_fonts.dart';
 // Make a timer
 // Implement audio support
 // Implement registration
-// Change architecture to MVC
-// ListView.builder the playlists.
 class MainScreen extends StatefulWidget {
   const MainScreen({ Key? key }) : super(key: key);
 
