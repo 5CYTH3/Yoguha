@@ -10,6 +10,7 @@ import 'package:google_fonts/google_fonts.dart';
 // ADD A CANCEL BUTTON
 // Implement audio support
 // Implement registration
+// Implement tools page.
 class MainScreen extends StatefulWidget {
   const MainScreen({ Key? key }) : super(key: key);
 
