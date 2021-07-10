@@ -88,10 +88,7 @@ class LoginScreenBody extends StatelessWidget {
                   margin: EdgeInsets.only(bottom: 30.0),
                   child: ElevatedButton(
                     onPressed: () async {
-                      await context.read<AuthService>().signIn(
-                        email: emailController.text.trim(),
-                        password: passwordController.text.trim()
-                      );
+
                     }, 
                     child: Text("LOGIN", style: GoogleFonts.alegreyaSans(color: Colors.white),),
                     style: ButtonStyle(

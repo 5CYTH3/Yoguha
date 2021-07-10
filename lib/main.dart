@@ -18,22 +18,16 @@ Future<void> main() async {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        Provider<AuthService>(create: (_) => AuthService(FirebaseAuth.instance)),
-        StreamProvider(create: (context) => context.read()<AuthService>().authStateChanges, initialData: null,)
-      ],
-        child: MaterialApp(
-        title: 'Yoguha',
-        theme: ThemeData(
-          primarySwatch: Colors.blue, 
-          primaryColor: Color(0xFF7C9A92),
-          accentColor: Color(0xFF253334)
-        ),
-        home: HomeScreen(),
-        debugShowCheckedModeBanner: false,
-      ),
-    );
+    return MaterialApp(
+    title: 'Yoguha',
+    theme: ThemeData(
+      primarySwatch: Colors.blue, 
+      primaryColor: Color(0xFF7C9A92),
+      accentColor: Color(0xFF253334)
+    ),
+    home: HomeScreen(),
+    debugShowCheckedModeBanner: false,
+      );
   }
 }
 
