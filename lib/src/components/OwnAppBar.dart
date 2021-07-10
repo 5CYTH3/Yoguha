@@ -21,14 +21,13 @@ class _OwnAppBarState extends State<OwnAppBar> {
       actions: [
         IconButton(
           onPressed: () {
-
+            
           },
           icon: Icon(Icons.perm_identity, color: Colors.white, size: 30,)
         )
       ],
       leading: IconButton(
         onPressed: () {
-            print("Téma l'bouzin sa marche");
             Scaffold.of(context).openDrawer();
         }, 
         icon: Image.asset("assets/burger.png"),

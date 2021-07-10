@@ -1,4 +1,5 @@
 import 'package:dribbly/src/components/OwnAppBar.dart';
+import 'package:dribbly/src/controllers/audio_player.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -60,7 +61,9 @@ class PlayingSound extends StatelessWidget {
                   iconSize: 70,
                   color: Colors.white,
                   icon: Icon(Icons.pause_circle_filled_rounded),
-                  onPressed: () {},
+                  onPressed: () {
+                    AudioPlayerController().initAudio(this.url);
+                  },
                 ),
                 IconButton(
                   iconSize: 40,
