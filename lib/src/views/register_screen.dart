@@ -1,3 +1,4 @@
+import 'package:dribbly/src/controllers/auth_service.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -99,14 +100,7 @@ class RegisterScreenBody extends StatelessWidget {
                   width: maxWidth,
                   margin: EdgeInsets.only(bottom: 30.0),
                   child: ElevatedButton(
-                    onPressed: () {
-
-
-
-                      // Put the signup method and return the login page when signed up
-                      
-
-
+                    onPressed: () async {
                       Navigator.push(
                         context, MaterialPageRoute(
                           builder: (context) => MainScreen()
