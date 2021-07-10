@@ -87,20 +87,36 @@ class _TimerScreenBodyState extends State<TimerScreenBody> {
     final isRunning = timer == null ? false : timer!.isActive;
 
     return isRunning ? 
-      ElevatedButton(
-        onPressed: () {
-          if (isRunning) {
-            stopTimer(resets: false);
-          }
-        }, 
-        child: Text("Stop"),
-        style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all(Theme.of(context).primaryColor),
-          textStyle: MaterialStateProperty.all(GoogleFonts.alegreyaSans(color: Colors.white, fontSize: 25, fontWeight: FontWeight.w500)),
-          elevation: MaterialStateProperty.all(4),
-          fixedSize: MaterialStateProperty.all(Size(220, 60)),
-          shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10))))
-        ),
+      Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          ElevatedButton(
+            onPressed: () {
+              if (isRunning) {
+                stopTimer(resets: false);
+              }
+            }, 
+            child: Text("Stop"),
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all(Theme.of(context).primaryColor),
+              textStyle: MaterialStateProperty.all(GoogleFonts.alegreyaSans(color: Colors.white, fontSize: 25, fontWeight: FontWeight.w500)),
+              elevation: MaterialStateProperty.all(4),
+              fixedSize: MaterialStateProperty.all(Size(150, 60)),
+              shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10))))
+            ),
+          ),
+          ElevatedButton(
+            onPressed: stopTimer,
+            child: Text("Cancel"),
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all(Theme.of(context).primaryColor),
+              textStyle: MaterialStateProperty.all(GoogleFonts.alegreyaSans(color: Colors.white, fontSize: 25, fontWeight: FontWeight.w500)),
+              elevation: MaterialStateProperty.all(4),
+              fixedSize: MaterialStateProperty.all(Size(150, 60)),
+              shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10))))
+            ),
+          )
+        ],
       ) :
       ElevatedButton(
         onPressed: () {

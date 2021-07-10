@@ -7,7 +7,6 @@ import 'package:google_fonts/google_fonts.dart';
 
 
 // TODO  :
-// ADD A CANCEL BUTTON
 // Implement audio support
 // Implement registration
 // Implement tools page.
