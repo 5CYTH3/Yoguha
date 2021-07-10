@@ -30,17 +30,3 @@ class MyApp extends StatelessWidget {
       );
   }
 }
-
-// Set this as home: and patch error of "object instead of dynamic".
-class AuthWrapper extends StatelessWidget {
-  const AuthWrapper({ Key? key }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final firebaseUser = context.watch()<User>();
-    if (firebaseUser != null) {
-      return MainScreen();
-    }
-    return HomeScreen();
-  }
-}
