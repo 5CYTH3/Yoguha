@@ -20,6 +20,7 @@ class LoginScreenBody extends StatelessWidget {
 
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
+  final AuthService _auth = AuthService();
 
   @override
   Widget build(BuildContext context) {
@@ -88,6 +89,10 @@ class LoginScreenBody extends StatelessWidget {
                   margin: EdgeInsets.only(bottom: 30.0),
                   child: ElevatedButton(
                     onPressed: () async {
+                      var password = passwordController.value.text;
+                      var email = emailController.value.text;
+
+                      dynamic result = await _auth.signInEmailPassword(email, password);
 
                     }, 
                     child: Text("LOGIN", style: GoogleFonts.alegreyaSans(color: Colors.white),),

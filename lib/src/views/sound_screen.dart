@@ -62,7 +62,7 @@ class PlayingSound extends StatelessWidget {
                   color: Colors.white,
                   icon: Icon(Icons.pause_circle_filled_rounded),
                   onPressed: () {
-                    AudioPlayerController().initAudio(this.url);
+
                   },
                 ),
                 IconButton(
@@ -73,7 +73,9 @@ class PlayingSound extends StatelessWidget {
                 ),
                 IconButton(
                   icon: Image.asset("assets/icons/replay.png"),
-                  onPressed: () {},
+                  onPressed: () {
+                    
+                  },
                 )
               ],
             )

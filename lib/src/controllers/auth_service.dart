@@ -1,0 +1,47 @@
+import 'package:dribbly/src/models/AppUser.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
+class AuthService {
+
+  FirebaseAuth _auth = FirebaseAuth.instance;
+
+  AppUser? _appUser(User? user) {
+    return user != null ? AppUser(uid: user.uid) : null;
+  }
+
+  Stream<AppUser?> get user {
+    return _auth.authStateChanges().map(_appUser);
+  }
+  Future signInEmailPassword(String email, String password) async {
+    try {
+      UserCredential resultUserCred = await _auth.signInWithEmailAndPassword(email: email, password: password);
+      User? user = resultUserCred.user;
+      return _appUser(user);
+    } catch (e) {
+      print(e.toString);
+      return null;
+    }
+  }
+
+  Future registerEmailPassword(String email, String password) async {
+    try {
+      UserCredential resultUserCred = _auth.createUserWithEmailAndPassword(email: email, password: password) as UserCredential;
+      User? user = resultUserCred.user;
+      return _appUser(user);
+    } catch (e) {
+      print(e.toString);
+      return null;
+    }
+
+  }
+
+  Future signOut() async {
+    try {
+      return await _auth.signOut();
+    } catch (e) {
+      print(e.toString());
+    }
+  
+  }
+
+}
