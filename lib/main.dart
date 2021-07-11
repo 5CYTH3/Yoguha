@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
           primaryColor: Color(0xFF7C9A92),
           accentColor: Color(0xFF253334)
         ),
-        home: ScreenWraper(),
+        home: ScreenWrapper(),
         debugShowCheckedModeBanner: false,
       ),
     );

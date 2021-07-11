@@ -1,8 +1,10 @@
+import 'package:dribbly/src/controllers/auth_service.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ProfileScreenBody extends StatelessWidget {
-  const ProfileScreenBody({ Key? key }) : super(key: key);
+  ProfileScreenBody({ Key? key }) : super(key: key);
+  final AuthService _auth = AuthService();
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +25,12 @@ class ProfileScreenBody extends StatelessWidget {
                 "You can't actually see your profile. I will add this feature later. Be patient.",
                 textAlign: TextAlign.center,
                 style: GoogleFonts.alegreyaSans(color: Colors.white70, fontSize: 20),
+              ),
+              ElevatedButton(
+                onPressed: () async {
+                  await _auth.signOut();
+                }, 
+                child: Text("Log Out")
               )
             ],
           ),

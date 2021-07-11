@@ -22,6 +22,7 @@ class RegisterScreenBody extends StatelessWidget {
 
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
+  final AuthService _auth = AuthService();
 
   @override
   Widget build(BuildContext context) {
@@ -101,11 +102,10 @@ class RegisterScreenBody extends StatelessWidget {
                   margin: EdgeInsets.only(bottom: 30.0),
                   child: ElevatedButton(
                     onPressed: () async {
-                      Navigator.push(
-                        context, MaterialPageRoute(
-                          builder: (context) => MainScreen()
-                        )
-                      );
+                      var password = passwordController.value.text;
+                      var email = emailController.value.text;
+
+                      dynamic result = await _auth.registerEmailPassword(email, password);
                     }, 
                     child: Text("SIGNUP", style: GoogleFonts.alegreyaSans(color: Colors.white),),
                     style: ButtonStyle(
