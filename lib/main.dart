@@ -4,7 +4,6 @@ import 'package:dribbly/src/models/AppUser.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'src/views/home_screen.dart';
 import 'package:provider/provider.dart';
 
 Future<void> main() async {
@@ -24,7 +23,6 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Yoguha',
         theme: ThemeData(
-          primarySwatch: Colors.blue, 
           primaryColor: Color(0xFF7C9A92),
           accentColor: Color(0xFF253334)
         ),

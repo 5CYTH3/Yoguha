@@ -6,7 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 class PlaylistScreenBody extends StatelessWidget {
   PlaylistScreenBody({ Key? key }) : super(key: key);
 
-  List playList = [
+  final List playList = [
     PlaylistModel("Painting Forest", "by: Painting with Passion", "assets/illustrations/amazonia.png", "20m", "https://www.youtube.com/watch?v=SDXHcR5AL6E"),
     PlaylistModel("Mountaineers", "by: Painting with Passion", "assets/illustrations/forest.png", "15m", ""),
     PlaylistModel("Lovely Desert", "by: Painting with Passion", "assets/illustrations/arizona.png", "39m", ""),
