@@ -12,6 +12,7 @@ import 'package:google_fonts/google_fonts.dart';
 // Implement tools page.
 // Add toast for error and prevent that a feature isn't implemented.
 // Add a Splash Screen
+// Reunify Login Screen and Registration Screen.
 
 class MainScreen extends StatefulWidget {
   const MainScreen({ Key? key }) : super(key: key);

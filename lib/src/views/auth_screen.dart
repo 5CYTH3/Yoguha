@@ -1,26 +1,41 @@
 import 'package:dribbly/src/controllers/auth_service.dart';
-import 'package:dribbly/src/views/register_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+class AuthScreen extends StatelessWidget {
+  const AuthScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: null,
-      body: LoginScreenBody(),
+      body: AuthScreenBody(),
     );
   }
 }
 
-class LoginScreenBody extends StatelessWidget {
-  LoginScreenBody({Key? key}) : super(key: key);
+class AuthScreenBody extends StatefulWidget {
+  AuthScreenBody({Key? key}) : super(key: key);
 
+  @override
+  State<AuthScreenBody> createState() => _AuthScreenBodyState();
+}
+
+class _AuthScreenBodyState extends State<AuthScreenBody> {
   final TextEditingController passwordController = TextEditingController();
+
   final TextEditingController emailController = TextEditingController();
+
   final AuthService _auth = AuthService();
+
+  bool showSignIn = false;
+
+
+  void toggleView() {
+    setState(() {
+      showSignIn = !showSignIn;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -44,10 +59,17 @@ class LoginScreenBody extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
-                  child: Text("Sign In", textAlign: TextAlign.start, style: GoogleFonts.alegreya(color: Colors.white, fontSize: 30, fontWeight: FontWeight.w500)),
+                  child: Text(
+                    showSignIn ? "Sign In" : "Sign Up", 
+                    textAlign: TextAlign.start, 
+                    style: GoogleFonts.alegreya(color: Colors.white, fontSize: 30, fontWeight: FontWeight.w500)
+                  ),
                   margin: EdgeInsets.only(bottom: 10),
                 ),
-                Text("Sign in now to acces your excercises and saved music.", style: GoogleFonts.alegreyaSans(fontSize: 22, color: Color.fromRGBO(255, 255, 255, 70), fontWeight: FontWeight.w400)),
+                Text(
+                  showSignIn ? "Sign in now to acces your excercises and saved music." : "Sign up now for free and start meditating, and explore Medic.",
+                  style: GoogleFonts.alegreyaSans(fontSize: 22, color: Color.fromRGBO(255, 255, 255, 70), fontWeight: FontWeight.w400)
+                ),
                 SizedBox(height: 60),
                 TextField(
                   style: TextStyle(color: Colors.white),
@@ -92,10 +114,13 @@ class LoginScreenBody extends StatelessWidget {
                       var password = passwordController.value.text;
                       var email = emailController.value.text;
 
-                      dynamic result = await _auth.signInEmailPassword(email, password);
+                      dynamic result = showSignIn ? await _auth.signInEmailPassword(email, password) : await _auth.registerEmailPassword(email, password);
 
-                    }, 
-                    child: Text("LOGIN", style: GoogleFonts.alegreyaSans(color: Colors.white),),
+                    },
+                    child: Text(
+                      showSignIn ? "LOGIN" : "SIGNUP", 
+                      style: GoogleFonts.alegreyaSans(color: Colors.white),
+                    ),
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(Theme.of(context).primaryColor),
                       textStyle: MaterialStateProperty.all(GoogleFonts.alegreyaSans(color: Colors.white, fontSize: 25, fontWeight: FontWeight.w500)),
@@ -107,22 +132,16 @@ class LoginScreenBody extends StatelessWidget {
                 ),
                 Container(
                   alignment: Alignment.center,
-                  child: TextButton(onPressed: () {
-                    print("It does work.");
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => RegisterScreen()
-                      )
-                    );
-                  }, 
+                  child: TextButton(onPressed: () => toggleView(), 
                   child: RichText(
                     text: TextSpan(
                       style: TextStyle(color: Colors.white, fontSize: 16),
                       children: <TextSpan>[
-                        TextSpan(text: "Don’t have an account? "),
                         TextSpan(
-                          text: "Sign Up",
+                          text: showSignIn ? "Don’t have an account? " : "Already have an account "
+                        ),
+                        TextSpan(
+                          text: showSignIn ? "Sign Up" : "Sign In",
                           style: TextStyle(fontWeight: FontWeight.bold)
                         )
                       ],

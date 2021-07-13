@@ -1,6 +1,5 @@
 import 'package:dribbly/src/models/widgets.dart';
-import 'package:dribbly/src/views/login_screen.dart';
-import 'package:dribbly/src/views/register_screen.dart';
+import 'package:dribbly/src/views/auth_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -58,7 +57,7 @@ class HomeScreenBody extends StatelessWidget {
                   SizedBox(height: 120),
                   Container(
                     margin: EdgeInsets.only(bottom: 15),
-                    child: ButtonFrequent(buttonText: "Login with Email", pageRoute: LoginScreen(),)
+                    child: ButtonFrequent(buttonText: "Login with Email", pageRoute: AuthScreen(),)
                   ),
                   Container(
                     alignment: Alignment.center,
@@ -68,7 +67,7 @@ class HomeScreenBody extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => RegisterScreen()
+                            builder: (context) => AuthScreen()
                           )
                         );
                       }, 
