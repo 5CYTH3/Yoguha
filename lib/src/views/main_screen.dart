@@ -7,12 +7,12 @@ import 'package:google_fonts/google_fonts.dart';
 
 
 // TODO  :
-// Implement audio support
-// Implement registration
 // Implement tools page.
-// Add toast for error and prevent that a feature isn't implemented.
 // Add a Splash Screen
-// Reunify Login Screen and Registration Screen.
+// Add toast for error and prevent that a feature isn't implemented.
+// Add error handling on the auth screen.
+// Implement audio support
+// Add a name and profile pic support + the profile screen.
 
 class MainScreen extends StatefulWidget {
   const MainScreen({ Key? key }) : super(key: key);
