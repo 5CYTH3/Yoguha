@@ -8,7 +8,6 @@ import 'package:google_fonts/google_fonts.dart';
 
 // TODO  :
 // Add icon to the app. NotSure?
-// Add error handling on the auth screen.
 // Implement audio support
 // Check the others screens and put error handling.
 // Optimize all
