@@ -7,7 +7,6 @@ import 'package:google_fonts/google_fonts.dart';
 
 
 // TODO  :
-// Implement tools page.
 // Add a Splash Screen
 // Add toast for error and prevent that a feature isn't implemented.
 // Add error handling on the auth screen.

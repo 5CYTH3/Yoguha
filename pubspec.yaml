@@ -6,7 +6,7 @@ publish_to: 'none'
 
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: ">=2.12.0 <3.1.0"
 
 dependencies:
   flutter:
@@ -20,15 +20,14 @@ dependencies:
   provider: ^5.0.0
   audioplayer: ^0.8.1
 
-flutter_launcher_name:
-  name: "Yoguha"
-
-
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_launcher_name: ^0.0.1
+  flutter_native_splash: ^1.2.0	
 
+flutter_native_splash:
+  background_image: "assets/background.png"
+  image: "assets/faviconNoGlow.png"
 
 flutter:
     
