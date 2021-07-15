@@ -7,8 +7,6 @@ import 'package:google_fonts/google_fonts.dart';
 
 
 // TODO  :
-// Add a Splash Screen
-// Add toast for error and prevent that a feature isn't implemented.
 // Add error handling on the auth screen.
 // Implement audio support
 // Add a name and profile pic support + the profile screen.

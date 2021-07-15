@@ -27,7 +27,8 @@ dev_dependencies:
 
 flutter_native_splash:
   background_image: "assets/background.png"
-  image: "assets/faviconNoGlow.png"
+  image: "assets/favicon.png"
+  size: 
 
 flutter:
     

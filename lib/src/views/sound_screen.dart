@@ -61,7 +61,7 @@ class PlayingSound extends StatelessWidget {
                   color: Colors.white,
                   icon: Icon(Icons.pause_circle_filled_rounded),
                   onPressed: () {
-
+                    
                   },
                 ),
                 IconButton(

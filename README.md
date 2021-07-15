@@ -9,3 +9,9 @@ It contains :
 
 ## How to install it
 Here is the link to download the APK (android) and the APP (iOS) files.
+
+## TO-DO
+Things which I will implement later :
+[ ] Error handling on the auth screen
+[ ] Audio support for playlists
+[ ] Profile informations like name and profile picture
