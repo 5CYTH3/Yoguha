@@ -23,12 +23,16 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_native_splash: ^1.2.0	
+  flutter_native_splash: ^1.0.0	
+  flutter_launcher_icons: ^0.9.0
 
 flutter_native_splash:
   background_image: "assets/background.png"
   image: "assets/favicon.png"
-  size: 
+
+flutter_icons:
+  image_path: "assets/faviconNoGlow.png"
+  ios: true
 
 flutter:
     
