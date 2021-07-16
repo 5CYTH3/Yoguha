@@ -10,6 +10,8 @@ import 'package:google_fonts/google_fonts.dart';
 // Check if user is already registered
 // Patch glow on the logo on the splash-screen
 // Optimize all (A lil bit)
+
+// ../2nd version
 // Add a name and profile pic support + the profile screen.
 
 class MainScreen extends StatefulWidget {

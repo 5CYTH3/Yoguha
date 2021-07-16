@@ -9,7 +9,7 @@ It contains :
 
 ## How to install it
 Here is the link to download the APK (android) and the APP (iOS) files.
-
+*// Not disponible for now :x*
 ## TO-DO
 Things which I will implement later :
 - [ ] Error handling on the auth screen
