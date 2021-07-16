@@ -1,7 +1,11 @@
 import 'package:dribbly/src/models/AppUser.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class AuthService {
+  Key? key;
+  AuthService({this.key});
 
   FirebaseAuth _auth = FirebaseAuth.instance;
 
@@ -19,7 +23,11 @@ class AuthService {
       return _appUser(user);
     } catch (e) {
       print(e.toString);
-      return null;
+      if(e is PlatformException) {
+
+        // Maybe toast the problem
+
+      }
     }
   }
 

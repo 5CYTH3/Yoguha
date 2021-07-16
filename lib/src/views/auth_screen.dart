@@ -4,34 +4,34 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 
 class AuthScreen extends StatelessWidget {
-  const AuthScreen({Key? key}) : super(key: key);
+  AuthScreen({Key? key}) : super(key: key);
+  GlobalKey<ScaffoldState> _scaffKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffKey,
       resizeToAvoidBottomInset: false,
       appBar: null,
-      body: AuthScreenBody(),
+      body: AuthScreenBody(key: _scaffKey,),
     );
   }
 }
 
 class AuthScreenBody extends StatefulWidget {
-  AuthScreenBody({Key? key}) : super(key: key);
+  final Key? key;
+  AuthScreenBody({this.key}) : super(key: key);
 
   @override
   State<AuthScreenBody> createState() => _AuthScreenBodyState();
 }
 
 class _AuthScreenBodyState extends State<AuthScreenBody> {
+  
   final TextEditingController passwordController = TextEditingController();
-
   final TextEditingController emailController = TextEditingController();
 
-  final AuthService _auth = AuthService();
-
   bool showSignIn = false;
-
 
   void toggleView() {
     setState(() {
@@ -40,6 +40,7 @@ class _AuthScreenBodyState extends State<AuthScreenBody> {
   }
   
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final AuthService _auth = AuthService();
 
 
   @override

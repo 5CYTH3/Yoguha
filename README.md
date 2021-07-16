@@ -15,3 +15,10 @@ Things which I will implement later :
 - [ ] Error handling on the auth screen
 - [ ] Audio support for playlists
 - [ ] Profile informations like name and profile picture
+
+## The template (Figma)
+Here is the link to access to the template (It's a figma file).  
+https://www.figma.com/file/JSOt6wsbSS4Ib8Hhl4xhOw/Medic-Meditation-App-(Community)?node-id=0%3A1&viewport=834%2C661%2C0.3037109673023224  
+  
+You can find the template in free download here :  
+https://www.uistore.design/items/medic-free-meditation-app-for-figma/

@@ -7,8 +7,9 @@ import 'package:google_fonts/google_fonts.dart';
  
 
 // TODO  :
-// Check the others screens and put error handling.
-// Optimize all
+// Check if user is already registered
+// Patch glow on the logo on the splash-screen
+// Optimize all (A lil bit)
 // Add a name and profile pic support + the profile screen.
 
 class MainScreen extends StatefulWidget {
@@ -93,6 +94,9 @@ class MainScreenBody extends StatelessWidget {
 						  ),
 						),
 						Row(
+
+              // Make this part as "ListView.builder"
+
 							mainAxisAlignment: MainAxisAlignment.spaceBetween,
 							children: [
 								Column(
