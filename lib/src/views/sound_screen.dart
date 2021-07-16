@@ -20,9 +20,7 @@ class PlayingSound extends StatefulWidget {
 class _PlayingSoundState extends State<PlayingSound> {
 
   AudioPlayer _audioPlayer = AudioPlayer(mode: PlayerMode.MEDIA_PLAYER);
-
   bool isPlaying = false;
-
   String currentSong = "";
 
   void playMusic(String url) async {
