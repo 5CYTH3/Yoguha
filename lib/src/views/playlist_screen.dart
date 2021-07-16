@@ -8,9 +8,9 @@ class PlaylistScreenBody extends StatelessWidget {
 
   final List playList = [
     PlaylistModel("Painting Forest", "by: Painting with Passion", "assets/illustrations/amazonia.png", "20m", "https://assets.mixkit.co/music/preview/mixkit-serene-view-443.mp3"),
-    PlaylistModel("Mountaineers", "by: Painting with Passion", "assets/illustrations/forest.png", "15m", ""),
-    PlaylistModel("Lovely Desert", "by: Painting with Passion", "assets/illustrations/arizona.png", "39m", ""),
-    PlaylistModel("The Hill Sides", "by: Painting with Passion", "assets/illustrations/desert.png", "50m", "")
+    PlaylistModel("Mountaineers", "by: Painting with Passion", "assets/illustrations/forest.png", "15m", "https://assets.mixkit.co/music/preview/mixkit-valley-sunset-127.mp3"),
+    PlaylistModel("Lovely Desert", "by: Painting with Passion", "assets/illustrations/arizona.png", "39m", "https://assets.mixkit.co/music/preview/mixkit-just-chill-16.mp3"),
+    PlaylistModel("The Hill Sides", "by: Painting with Passion", "assets/illustrations/desert.png", "50m", "https://assets.mixkit.co/music/preview/mixkit-spirit-in-the-woods-2-147.mp3")
   ];
 
   @override

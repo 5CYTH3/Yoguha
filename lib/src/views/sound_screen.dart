@@ -53,6 +53,9 @@ class _PlayingSoundState extends State<PlayingSound> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            SizedBox(
+              height: 40,
+            ),
             Container(
               height: 250.0,
               width: 250.0,
@@ -86,7 +89,12 @@ class _PlayingSoundState extends State<PlayingSound> {
                   iconSize: 40,
                   color: Colors.white,
                   icon: Icon(Icons.fast_rewind_rounded),
-                  onPressed: () {},
+                  onPressed: () {
+                    if(isPlaying) {
+                      _audioPlayer.stop();
+                      playMusic(this.widget.url);
+                    }
+                  },
                 ),
                 IconButton(
                   iconSize: 70,
@@ -94,7 +102,14 @@ class _PlayingSoundState extends State<PlayingSound> {
                   icon: isPlaying ? Icon(Icons.pause_circle_filled_rounded) : Icon(Icons.play_circle_fill_rounded),
                   onPressed: () {
                     // Play the music
-                    playMusic(this.widget.url);
+                    if(!isPlaying) {
+                      playMusic(this.widget.url);
+                    } else {
+                      _audioPlayer.pause();
+                      setState(() {
+                        isPlaying = false;
+                      });
+                    }
 
                   },
                 ),
