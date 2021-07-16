@@ -7,7 +7,6 @@ import 'package:google_fonts/google_fonts.dart';
  
 
 // TODO  :
-// Implement audio support
 // Check the others screens and put error handling.
 // Optimize all
 // Add a name and profile pic support + the profile screen.
