@@ -1,8 +1,9 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:dribbly/src/components/OwnAppBar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class PlayingSound extends StatelessWidget {
+class PlayingSound extends StatefulWidget {
   
   final String url;
   final String title;
@@ -11,6 +12,37 @@ class PlayingSound extends StatelessWidget {
 
 
   PlayingSound({ Key? key, required this.url, required this.title, required this.subTitle, required this.imagePath }) : super(key: key);
+
+  @override
+  _PlayingSoundState createState() => _PlayingSoundState();
+}
+
+class _PlayingSoundState extends State<PlayingSound> {
+
+  AudioPlayer _audioPlayer = AudioPlayer(mode: PlayerMode.MEDIA_PLAYER);
+
+  bool isPlaying = false;
+
+  String currentSong = "";
+
+  void playMusic(String url) async {
+    if(isPlaying && currentSong != url) {
+      _audioPlayer.pause();
+      int result = await _audioPlayer.play(url);
+      if(result == 1) {
+        setState(() {
+          currentSong = url;
+        });
+      }
+    } else if(!isPlaying) {
+      int result = await _audioPlayer.play(url);
+      if(result == 1) {
+        setState(() {
+          isPlaying = true;
+        });
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -27,16 +59,16 @@ class PlayingSound extends StatelessWidget {
               margin: EdgeInsets.symmetric(vertical: 15.0),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(200)),
-                image: DecorationImage(image: AssetImage(this.imagePath), fit: BoxFit.cover),
+                image: DecorationImage(image: AssetImage(this.widget.imagePath), fit: BoxFit.cover),
               ),
             ),
             SizedBox(height: 20,),
             Text(
-              this.title,
+              this.widget.title,
               style: GoogleFonts.alegreya(color: Colors.white, fontSize: 35),
             ),
             Text(
-              this.subTitle,
+              this.widget.subTitle,
               style: GoogleFonts.alegreyaSans(color: Colors.white70, fontSize: 25)
             ),
             Container(
@@ -59,9 +91,11 @@ class PlayingSound extends StatelessWidget {
                 IconButton(
                   iconSize: 70,
                   color: Colors.white,
-                  icon: Icon(Icons.pause_circle_filled_rounded),
+                  icon: isPlaying ? Icon(Icons.pause_circle_filled_rounded) : Icon(Icons.play_circle_fill_rounded),
                   onPressed: () {
-                    
+                    // Play the music
+                    playMusic(this.widget.url);
+
                   },
                 ),
                 IconButton(

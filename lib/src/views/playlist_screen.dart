@@ -7,7 +7,7 @@ class PlaylistScreenBody extends StatelessWidget {
   PlaylistScreenBody({ Key? key }) : super(key: key);
 
   final List playList = [
-    PlaylistModel("Painting Forest", "by: Painting with Passion", "assets/illustrations/amazonia.png", "20m", "https://www.youtube.com/watch?v=SDXHcR5AL6E"),
+    PlaylistModel("Painting Forest", "by: Painting with Passion", "assets/illustrations/amazonia.png", "20m", "https://assets.mixkit.co/music/preview/mixkit-serene-view-443.mp3"),
     PlaylistModel("Mountaineers", "by: Painting with Passion", "assets/illustrations/forest.png", "15m", ""),
     PlaylistModel("Lovely Desert", "by: Painting with Passion", "assets/illustrations/arizona.png", "39m", ""),
     PlaylistModel("The Hill Sides", "by: Painting with Passion", "assets/illustrations/desert.png", "50m", "")
