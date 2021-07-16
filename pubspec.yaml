@@ -29,11 +29,10 @@ dev_dependencies:
 
 flutter_native_splash:
   background_image: "assets/background.png"
-  image: "assets/favicon.png"
+  image: "assets/splashIcon.png"
 
 flutter_icons:
-  image_path: "assets/faviconNoGlow.png"
-  ios: true
+  image_path: "assets/appIcon.png"
 
 flutter:
     
