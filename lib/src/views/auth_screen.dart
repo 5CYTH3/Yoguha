@@ -115,7 +115,7 @@ class _AuthScreenBodyState extends State<AuthScreenBody> {
                     width: maxWidth,
                     alignment: Alignment.centerRight,
                     margin: EdgeInsets.only(top: 10, bottom: 40),
-                    child: Text("Forgot password?", style: GoogleFonts.alegreyaSans(fontWeight: FontWeight.normal, color: gray)) 
+                    child: showSignIn ? Text("Forgot password?", style: GoogleFonts.alegreyaSans(fontWeight: FontWeight.normal, color: gray)) : null 
                   ),
                   Container(
                     width: maxWidth,

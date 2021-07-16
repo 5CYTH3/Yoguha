@@ -4,10 +4,10 @@ import 'package:google_fonts/google_fonts.dart';
 
 class PlayingSound extends StatelessWidget {
   
-  String url;
-  String title;
-  String subTitle;
-  String imagePath;
+  final String url;
+  final String title;
+  final String subTitle;
+  final String imagePath;
 
 
   PlayingSound({ Key? key, required this.url, required this.title, required this.subTitle, required this.imagePath }) : super(key: key);

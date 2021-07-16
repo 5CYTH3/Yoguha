@@ -3,8 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 
 class ButtonFrequent extends StatelessWidget {
 
-  String buttonText;
-  Widget pageRoute;
+  final String buttonText;
+  final Widget pageRoute;
 
   ButtonFrequent({ Key? key, required this.buttonText, required this.pageRoute });
 
