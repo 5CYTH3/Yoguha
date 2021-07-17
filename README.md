@@ -8,7 +8,9 @@ It contains :
 - [ ] A profile page  
 
 ## How to install it
-Here is the link to download the APK (android) file. *(The app doesn't support iOS because Apple is a really big shit and don't allow us to do anything if we don't have a mac.)*
+Here is the link to download the APK (android) file. *(The app doesn't support iOS because Apple is a really big piece of shit and don't allow us to do anything if we don't have a mac.)*  
+https://mega.nz/file/GfoiRKSC#RK6V48lyaI7cdt4ICCynsNQDm2aBGH5RDlyNgfF_lrU  
+
 ## TO-DO
 Things which I will implement later :
 - [ ] Error handling on the auth screen
