@@ -4,12 +4,11 @@ A Flutter project made with Firebase that helps you for your next Yoga sessions.
 It contains :  
 - [x] An authentication system  
 - [x] A timer  
-- [ ] Some relaxing playlists  
+- [x] Some relaxing playlists  
 - [ ] A profile page  
 
 ## How to install it
-Here is the link to download the APK (android) and the APP (iOS) files.
-*// Not disponible for now :x*
+Here is the link to download the APK (android) file. *(The app doesn't support iOS because Apple is a really big shit and don't allow us to do anything if we don't have a mac.)*
 ## TO-DO
 Things which I will implement later :
 - [ ] Error handling on the auth screen
