@@ -2,6 +2,7 @@ import 'package:dribbly/src/models/AppUser.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class AuthService {
   Key? key;
@@ -23,11 +24,6 @@ class AuthService {
       return _appUser(user);
     } catch (e) {
       print(e.toString);
-      if(e is PlatformException) {
-
-        // Maybe toast the problem
-
-      }
     }
   }
 
@@ -38,7 +34,6 @@ class AuthService {
       return _appUser(user);
     } catch (e) {
       print(e.toString);
-      return null;
     }
 
   }

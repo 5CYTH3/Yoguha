@@ -8,7 +8,6 @@ import 'package:google_fonts/google_fonts.dart';
 
 // TODO  :
 // ! Check if user is already registered (Flutter Toast)
-// ? Patch glow on the logo on the splash-screen
 
 // ../2nd version
 // Transform little icons in the main_screen to ListView.builder

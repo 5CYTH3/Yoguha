@@ -5,15 +5,13 @@ import 'package:form_field_validator/form_field_validator.dart';
 
 class AuthScreen extends StatelessWidget {
   AuthScreen({Key? key}) : super(key: key);
-  GlobalKey<ScaffoldState> _scaffKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: _scaffKey,
       resizeToAvoidBottomInset: false,
       appBar: null,
-      body: AuthScreenBody(key: _scaffKey,),
+      body: AuthScreenBody(),
     );
   }
 }
