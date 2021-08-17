@@ -22,21 +22,19 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
 
-		int _selectedIndex = 0;
+	int _selectedIndex = 0;
 		
-		List<Widget> _widgetOptions = <Widget>[
-			MainScreenBody(),
-			PlaylistScreenBody(),
-			ProfileScreenBody()
-		];
+	List<Widget> _widgetOptions = <Widget>[
+		MainScreenBody(),
+		PlaylistScreenBody(),
+		ProfileScreenBody()
+	];
 
-		void _onItemTap(int index) {
-			setState(() {
-			  _selectedIndex = index;
-			});
-		}
-
-    GlobalKey<ScaffoldState> _mainKey = GlobalKey();
+	void _onItemTap(int index) {
+		setState(() {
+		  _selectedIndex = index;
+		});
+	}
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +42,6 @@ class _MainScreenState extends State<MainScreen> {
 
 		return Scaffold(
       appBar: OwnAppBar(),
-      key: _mainKey,
       drawer: NavigationDrawerWidget(),
       body: _widgetOptions.elementAt(_selectedIndex),
 			bottomNavigationBar: BottomNavigationBar(
@@ -59,7 +56,6 @@ class _MainScreenState extends State<MainScreen> {
 					BottomNavigationBarItem(icon: Image.asset("assets/bottom/sounds.png"), label: " ", activeIcon: Image.asset("assets/bottom/soundsSelected.png")),
 					BottomNavigationBarItem(icon: Icon(Icons.perm_identity_rounded, color: gray), label: " ", activeIcon: Icon(Icons.perm_identity_rounded, color: Colors.white,))
 				],
-
 			),
     );
   }
